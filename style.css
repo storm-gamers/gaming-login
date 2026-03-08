@@ -1,96 +1,99 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Orbitron', sans-serif;
-    overflow: hidden;
-    height: 100%;
-    background: radial-gradient(circle at top,#050510,#000000);
-    color: #fff;
+margin:0;
+padding:0;
+font-family:'Orbitron',sans-serif;
+overflow:hidden;
+height:100%;
+color:white;
+
+background:
+radial-gradient(circle at 20% 20%, rgba(0,255,255,0.15), transparent 40%),
+radial-gradient(circle at 80% 30%, rgba(0,0,255,0.2), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(255,0,255,0.15), transparent 40%),
+radial-gradient(circle at center,#050510 0%,#000000 80%);
 }
 
-/* center container */
-
-.container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container{
+position:relative;
+z-index:2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
-/* XGPT AI glass panel */
-
-.login-box {
-    background: rgba(10,10,30,0.85);
-    backdrop-filter: blur(15px);
-    padding: 45px;
-    border-radius: 20px;
-    border: 1px solid rgba(0,255,255,0.4);
-    box-shadow: 0 0 30px #00ffff, 0 0 60px rgba(0,255,255,0.4);
-    width: 360px;
-    text-align: center;
-    animation: glow 3s infinite alternate;
+.login-box{
+position:relative;
+background:rgba(10,10,30,0.85);
+backdrop-filter:blur(15px);
+padding:45px;
+border-radius:20px;
+border:1px solid rgba(0,255,255,0.4);
+box-shadow:0 0 30px #00ffff,0 0 60px rgba(0,255,255,0.4);
+width:360px;
+text-align:center;
+animation:glow 3s infinite alternate;
 }
 
-@keyframes glow {
-    0% { box-shadow: 0 0 15px #00ffff, 0 0 30px #0099ff; }
-    100% { box-shadow: 0 0 40px #00ffff, 0 0 80px #0066ff; }
+.login-box::before{
+content:"";
+position:absolute;
+inset:-60px;
+background:radial-gradient(circle,#00ffff22,transparent 70%);
+filter:blur(40px);
+z-index:-1;
 }
 
-/* AI heading */
+@keyframes glow{
+0%{box-shadow:0 0 15px #00ffff,0 0 30px #0099ff;}
+100%{box-shadow:0 0 40px #00ffff,0 0 80px #0066ff;}
+}
 
 .login-box h1{
-    font-size:28px;
-    letter-spacing:3px;
-    color:#00ffff;
-    text-shadow:0 0 20px #00ffff;
-    margin-bottom:25px;
+font-size:28px;
+letter-spacing:3px;
+color:#00ffff;
+text-shadow:0 0 20px #00ffff;
+margin-bottom:25px;
 }
 
-/* input fields */
-
-.login-box input {
-    width: 100%;
-    padding: 12px;
-    margin: 12px 0;
-    background: rgba(255,255,255,0.05);
-    border-radius: 8px;
-    color: white;
-    border: 1px solid rgba(0,255,255,0.3);
-    outline: none;
-    transition:0.3s;
+.login-box input{
+width:100%;
+padding:12px;
+margin:12px 0;
+background:rgba(255,255,255,0.05);
+border-radius:8px;
+color:white;
+border:1px solid rgba(0,255,255,0.3);
+outline:none;
+transition:0.3s;
 }
 
 .login-box input:focus{
-    border-color:#00ffff;
-    box-shadow:0 0 10px #00ffff;
+border-color:#00ffff;
+box-shadow:0 0 10px #00ffff;
 }
 
-/* login button */
-
 button{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    border-radius:8px;
-    background:linear-gradient(45deg,#00ffff,#0066ff);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:0.3s;
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:linear-gradient(45deg,#00ffff,#0066ff);
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px #00ffff;
+transform:scale(1.05);
+box-shadow:0 0 20px #00ffff;
 }
 
-/* footer text */
-
 .login-box p{
-    margin-top:20px;
-    font-size:12px;
-    opacity:0.7;
+margin-top:20px;
+font-size:12px;
+opacity:0.7;
 }
